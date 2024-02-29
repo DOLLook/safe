@@ -2,4 +2,4 @@ package safe
 
 import "errors"
 
-var ERRTest = errors.New("error")
+var ErrTest = errors.New("error")

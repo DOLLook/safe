@@ -15,11 +15,11 @@ func Test_Group(t *testing.T) {
 	var wg Group
 	for i := 0; i < 10; i++ {
 		wg.Go(func() error {
-			panic(ERRTest)
+			panic(ErrTest)
 		})
 	}
 
 	err := wg.Wait()
 	r.Error(err)
-	r.True(errors.Is(err, ERRTest))
+	r.True(errors.Is(err, ErrTest))
 }
