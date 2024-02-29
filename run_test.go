@@ -24,21 +24,21 @@ func Test_Run(t *testing.T) {
 		{
 			name: "error",
 			fn: func() error {
-				return ERR
+				return ERRTest
 			},
 			err: true,
 		},
 		{
 			name: "panic w/ error",
 			fn: func() error {
-				panic(ERR)
+				panic(ERRTest)
 			},
 			err: true,
 		},
 		{
 			name: "panic w/ string",
 			fn: func() error {
-				panic(ERR.Error())
+				panic(ERRTest.Error())
 			},
 			err: true,
 		},
@@ -70,7 +70,7 @@ func Test_Run(t *testing.T) {
 			}
 
 			if tc.exp == "" {
-				tc.exp = ERR.Error()
+				tc.exp = ERRTest.Error()
 			}
 
 			r.Error(err)
